@@ -12,340 +12,302 @@ def get_database():
     return EnhancedDatabaseManager()
 
 def apply_custom_css():
-    """Apply custom CSS with black background and white elements"""
+    """Apply custom CSS with child-friendly bright colors and playful design"""
     st.markdown("""
     <style>
-    /* Import Inter font */
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+    /* Import fun, child-friendly fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&family=Fredoka:wght@300;400;500;600;700&display=swap');
     
-    /* Global styles - Black theme */
+    /* Global styles - Bright, fun theme */
     .stApp {
-        font-family: 'Inter', sans-serif;
-        background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-        color: white;
+        font-family: 'Comic Neue', 'Fredoka', cursive, sans-serif;
+        background: linear-gradient(135deg, #FFE5B4 0%, #FFF8DC 50%, #E6F3FF 100%);
+        color: #2E4057;
     }
     
     /* Main content area */
     .main .block-container {
         background: transparent;
-        color: white;
+        color: #2E4057;
     }
     
-    /* Header styles */
+    /* Header styles - Rainbow gradient */
     .main-header {
-        background: linear-gradient(135deg, #333333 0%, #1a1a1a 100%);
+        background: linear-gradient(135deg, #FF6B9D 0%, #C44569 25%, #F8B500 50%, #6C5CE7 75%, #74B9FF 100%);
         color: white;
-        padding: 2rem;
-        border-radius: 15px;
+        padding: 2.5rem;
+        border-radius: 25px;
         margin-bottom: 2rem;
-        box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
-        border: 1px solid #333333;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        border: 4px solid #FFD700;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
     
     .main-header h1 {
-        font-size: 2.5rem;
-        font-weight: 800;
+        font-size: 3rem;
+        font-weight: 700;
         margin: 0;
         color: white;
+        font-family: 'Fredoka', cursive;
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
     }
     
     .main-header p {
-        font-size: 1.1rem;
-        opacity: 0.9;
+        font-size: 1.3rem;
         margin: 0.5rem 0 0 0;
-        color: #cccccc;
-    }
-    
-    /* Card styles - Dark cards with white text */
-    .card {
-        background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
-        border-radius: 15px;
-        padding: 2rem;
-        box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
-        border: 1px solid #333333;
-        margin-bottom: 1.5rem;
         color: white;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
     }
     
-    /* Sidebar styles - Black sidebar */
+    /* Card styles - Colorful, rounded cards */
+    .card {
+        background: linear-gradient(135deg, #FFE5F1 0%, #E8F5FF 100%);
+        border-radius: 25px;
+        padding: 2rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        border: 3px solid #FF6B9D;
+        margin-bottom: 1.5rem;
+        color: #2E4057;
+    }
+    
+    /* Sidebar styles - Bright sidebar */
     .css-1d391kg {
-        background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+        background: linear-gradient(135deg, #FFE5B4 0%, #FFD1DC 100%);
     }
     
     .sidebar-title {
-        color: white;
-        font-size: 1.5rem;
+        color: #C44569;
+        font-size: 1.8rem;
         font-weight: 700;
         margin-bottom: 1rem;
         text-align: center;
+        font-family: 'Fredoka', cursive;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
     }
     
-    /* Button styles - White buttons with BLACK text */
+    /* Button styles - Colorful, fun buttons */
     .stButton > button {
-        background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
-        color: #000000 !important;
+        background: linear-gradient(135deg, #FF6B9D 0%, #C44569 100%);
+        color: white !important;
         border: none;
-        border-radius: 8px;
-        padding: 0.75rem 1.5rem;
-        font-weight: 600;
+        border-radius: 20px;
+        padding: 1rem 2rem;
+        font-weight: 700;
+        font-size: 1.1rem;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 20px rgba(255, 107, 157, 0.4);
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        font-family: 'Fredoka', cursive;
     }
     
     .stButton > button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
-        background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
-        color: #000000 !important;
+        transform: translateY(-4px) scale(1.05);
+        box-shadow: 0 12px 30px rgba(255, 107, 157, 0.6);
+        background: linear-gradient(135deg, #FF8FA3 0%, #D63384 100%);
+        color: white !important;
     }
     
     .stButton > button:focus {
-        background: linear-gradient(135deg, #e0e0e0 0%, #d0d0d0 100%);
-        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
-        color: #000000 !important;
+        background: linear-gradient(135deg, #E91E63 0%, #AD1457 100%);
+        box-shadow: 0 0 0 4px rgba(255, 107, 157, 0.4);
+        color: white !important;
     }
     
     .stButton > button:active {
-        color: #000000 !important;
+        color: white !important;
+        transform: translateY(-2px) scale(1.02);
     }
     
-    /* Input field styles */
+    /* Input field styles - Bright and friendly */
     .stTextInput > div > div > input {
-        background-color: #2a2a2a;
-        color: white;
-        border: 1px solid #444444;
-        border-radius: 8px;
+        background: linear-gradient(135deg, #FFFACD 0%, #F0F8FF 100%);
+        color: #2E4057;
+        border: 3px solid #FFB6C1;
+        border-radius: 15px;
+        font-size: 1.1rem;
+        padding: 0.8rem;
+        font-family: 'Comic Neue', cursive;
     }
     
     .stTextInput > div > div > input:focus {
-        border-color: #ffffff;
-        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+        border-color: #FF6B9D;
+        box-shadow: 0 0 0 3px rgba(255, 107, 157, 0.3);
+        background: #FFFAFD;
     }
     
     .stSelectbox > div > div > select {
-        background-color: #2a2a2a;
-        color: white;
-        border: 1px solid #444444;
+        background: linear-gradient(135deg, #FFFACD 0%, #F0F8FF 100%);
+        color: #2E4057;
+        border: 3px solid #FFB6C1;
+        border-radius: 15px;
+        font-family: 'Comic Neue', cursive;
     }
     
-    /* Radio button styles */
+    .stDateInput > div > div > input {
+        background: linear-gradient(135deg, #FFFACD 0%, #F0F8FF 100%);
+        color: #2E4057;
+        border: 3px solid #FFB6C1;
+        border-radius: 15px;
+        font-family: 'Comic Neue', cursive;
+    }
+    
+    /* Checkbox and radio styles */
+    .stCheckbox {
+        color: #2E4057;
+        font-weight: 600;
+        font-family: 'Comic Neue', cursive;
+    }
+    
     .stRadio > div {
         background-color: transparent;
     }
     
     .stRadio label {
-        color: white;
+        color: #2E4057;
+        font-weight: 600;
+        font-family: 'Comic Neue', cursive;
     }
     
-    /* Form styles */
+    /* Form styles - Bright forms */
     .stForm {
-        background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
-        border: 1px solid #333333;
-        border-radius: 10px;
-        padding: 1rem;
+        background: linear-gradient(135deg, #FFF5EE 0%, #F0FFFF 100%);
+        border: 4px solid #FFB6C1;
+        border-radius: 25px;
+        padding: 2rem;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     }
     
-    /* Success/Error styles */
+    /* Success/Error styles - Bright and clear */
     .success-box {
-        background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
-        color: #000000;
-        padding: 1rem;
-        border-radius: 8px;
+        background: linear-gradient(135deg, #90EE90 0%, #98FB98 100%);
+        color: #006400;
+        padding: 1.5rem;
+        border-radius: 20px;
         margin: 1rem 0;
-        border: 1px solid #cccccc;
+        border: 3px solid #32CD32;
+        box-shadow: 0 8px 20px rgba(50, 205, 50, 0.3);
+        font-weight: 600;
+        font-family: 'Fredoka', cursive;
     }
     
     .error-box {
-        background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
-        color: #000000;
-        padding: 1rem;
-        border-radius: 8px;
+        background: linear-gradient(135deg, #FFB6C1 0%, #FFC0CB 100%);
+        color: #8B0000;
+        padding: 1.5rem;
+        border-radius: 20px;
         margin: 1rem 0;
-        border: 1px solid #cccccc;
+        border: 3px solid #FF1493;
+        box-shadow: 0 8px 20px rgba(255, 20, 147, 0.3);
+        font-weight: 600;
+        font-family: 'Fredoka', cursive;
     }
     
-    /* Progress indicators */
+    /* Progress indicators - Fun progress cards */
     .progress-card {
-        background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
-        border: 2px solid #ffffff;
-        border-radius: 12px;
-        padding: 1.5rem;
+        background: linear-gradient(135deg, #87CEEB 0%, #98FB98 100%);
+        border: 4px solid #FFD700;
+        border-radius: 25px;
+        padding: 2rem;
         text-align: center;
         margin: 1rem 0;
-        color: white;
+        color: #2E4057;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     }
     
     .progress-number {
-        font-size: 2.5rem;
-        font-weight: 800;
-        color: #ffffff;
-    }
-    
-    /* Login form styles */
-    .login-container {
-        max-width: 400px;
-        margin: 2rem auto;
-        background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
-        padding: 2.5rem;
-        border-radius: 20px;
-        box-shadow: 0 10px 40px rgba(255, 255, 255, 0.1);
-        border: 1px solid #333333;
-        color: white;
-    }
-    
-    /* Table styles */
-    .dataframe {
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
-        background: #2a2a2a;
-    }
-    
-    .dataframe table {
-        background: #2a2a2a;
-        color: white;
-    }
-    
-    .dataframe th {
-        background: #1a1a1a;
-        color: white;
-        border-bottom: 1px solid #444444;
-    }
-    
-    .dataframe td {
-        background: #2a2a2a;
-        color: white;
-        border-bottom: 1px solid #333333;
-    }
-    
-    /* Hide Streamlit elements */
-    #MainMenu {visibility: hidden;}
-    footer {visibility: hidden;}
-    header {visibility: hidden;}
-    
-    /* Role badge styles */
-    .role-badge {
-        display: inline-block;
-        padding: 0.25rem 0.75rem;
-        border-radius: 20px;
-        font-size: 0.875rem;
-        font-weight: 600;
-        text-transform: uppercase;
-    }
-    
-    .role-master {
-        background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
-        color: #000000;
-        border: 1px solid #cccccc;
-    }
-    
-    .role-student {
-        background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
-        color: #000000;
-        border: 1px solid #cccccc;
-    }
-    
-    /* Quiz styles */
-    .question-card {
-        background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
-        border-radius: 12px;
-        padding: 1.5rem;
-        margin: 1rem 0;
-        box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
-        border-left: 4px solid #ffffff;
-        color: white;
-    }
-    
-    .question-number {
-        color: #ffffff;
+        font-size: 3rem;
         font-weight: 700;
-        font-size: 1.1rem;
+        color: #FF6B9D;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        font-family: 'Fredoka', cursive;
     }
     
-    /* Streamlit specific overrides */
-    .stApp > div {
-        background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+    /* Login form styles - Bright and welcoming */
+    .login-container {
+        max-width: 450px;
+        margin: 2rem auto;
+        background: linear-gradient(135deg, #FFE5F1 0%, #E8F5FF 100%);
+        padding: 3rem;
+        border-radius: 30px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        border: 4px solid #FF6B9D;
+        color: #2E4057;
     }
     
-    /* Sidebar content styling */
-    .css-1d391kg .css-1v0mbdj {
-        color: white;
-    }
-    
-    /* Tab styling */
+    /* Tabs styling */
     .stTabs [data-baseweb="tab-list"] {
-        background: #2a2a2a;
-        border-radius: 8px;
+        gap: 8px;
     }
     
     .stTabs [data-baseweb="tab"] {
-        background: #1a1a1a;
-        color: white;
-        border-radius: 8px;
-        margin: 2px;
+        background: linear-gradient(135deg, #FFB6C1 0%, #FFC0CB 100%);
+        color: #2E4057;
+        border-radius: 15px;
+        font-weight: 600;
+        padding: 0.5rem 1rem;
+        border: 2px solid #FF6B9D;
+        font-family: 'Fredoka', cursive;
     }
     
     .stTabs [aria-selected="true"] {
-        background: white;
-        color: black;
+        background: linear-gradient(135deg, #FF6B9D 0%, #C44569 100%);
+        color: white;
+        box-shadow: 0 4px 15px rgba(255, 107, 157, 0.4);
+    }
+    
+    /* Text styles */
+    h1, h2, h3, h4, h5, h6 {
+        color: #2E4057;
+        font-family: 'Fredoka', cursive;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
     }
     
     /* Metrics styling */
-    .metric-container {
-        background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+    [data-testid="metric-container"] {
+        background: linear-gradient(135deg, #E8F5FF 0%, #F0FFFF 100%);
+        border: 3px solid #87CEEB;
         padding: 1rem;
-        border-radius: 10px;
-        border: 1px solid #333333;
+        border-radius: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
     
-    /* Chart background */
-    .js-plotly-plot {
-        background: transparent !important;
+    /* Sidebar button improvements */
+    .css-1d391kg .stButton > button {
+        background: linear-gradient(135deg, #6C5CE7 0%, #A29BFE 100%);
+        color: white !important;
+        border: none;
+        border-radius: 20px;
+        padding: 0.8rem 1.5rem;
+        font-weight: 600;
+        margin: 0.2rem 0;
+        box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
+        font-family: 'Fredoka', cursive;
     }
     
-    /* Text color overrides */
-    .stMarkdown {
-        color: white;
+    .css-1d391kg .stButton > button:hover {
+        background: linear-gradient(135deg, #5F3DC4 0%, #7950F2 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(108, 92, 231, 0.6);
     }
     
-    h1, h2, h3, h4, h5, h6 {
-        color: white;
+    /* Info, warning, success message styling */
+    .stAlert {
+        border-radius: 15px;
+        border: 3px solid;
+        font-family: 'Comic Neue', cursive;
+        font-weight: 600;
     }
     
-    p {
-        color: #cccccc;
+    /* Slider styling */
+    .stSlider > div > div > div > div {
+        background: linear-gradient(135deg, #FF6B9D 0%, #C44569 100%);
+        border-radius: 20px;
     }
     
-    /* Alert styles */
-    .stAlert > div {
-        background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
-        color: white;
-        border: 1px solid #333333;
-    }
-    
-    .stSuccess > div {
-        background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
-        color: #000000;
-        border: 1px solid #cccccc;
-    }
-    
-    .stError > div {
-        background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
-        color: #000000;
-        border: 1px solid #cccccc;
-    }
-    
-    .stWarning > div {
-        background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
-        color: #000000;
-        border: 1px solid #cccccc;
-    }
-    
-    .stInfo > div {
-        background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
-        color: #000000;
-        border: 1px solid #cccccc;
-    }
+    /* Hide Streamlit branding */
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
     </style>
     """, unsafe_allow_html=True)
 
@@ -359,16 +321,28 @@ def show_header(title: str, subtitle: str = ""):
     """, unsafe_allow_html=True)
 
 def show_landing_page():
-    """Display the landing page"""
+    """Display the child-friendly landing page"""
     st.markdown("""
     <div style="text-align: center; padding: 4rem 2rem;">
-        <div style="background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%); padding: 3rem; border-radius: 20px; box-shadow: 0 15px 50px rgba(255,255,255,0.1); max-width: 600px; margin: 0 auto; border: 1px solid #333333;">
-            <h1 style="font-size: 3rem; font-weight: 800; margin-bottom: 1rem; color: white;">
-                Welcome to the <span style="color: #ffffff;">WIDA</span> Syllabus Tracker
+        <div style="background: linear-gradient(135deg, #FFE5F1 0%, #E8F5FF 100%); padding: 3rem; border-radius: 30px; box-shadow: 0 15px 50px rgba(255,107,157,0.3); max-width: 700px; margin: 0 auto; border: 4px solid #FF6B9D;">
+            <h1 style="font-size: 3.5rem; font-weight: 700; margin-bottom: 1rem; color: #2E4057; font-family: 'Fredoka', cursive; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">
+                🌟 Welcome to the <span style="color: #FF6B9D;">WIDA</span> Learning Adventure! 🌟
             </h1>
-            <p style="font-size: 1.2rem; color: #cccccc; margin-bottom: 2rem;">
-                Your centralized platform for WIDA screener test preparation. Master your syllabus, track student progress, and achieve success together.
+            <p style="font-size: 1.4rem; color: #2E4057; margin-bottom: 2rem; font-family: 'Comic Neue', cursive; font-weight: 600;">
+                🚀 Your magical platform for WIDA test preparation! 📚<br>
+                🎯 Learn, practice, and achieve your dreams together! ✨
             </p>
+            <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-top: 2rem;">
+                <div style="background: linear-gradient(135deg, #87CEEB 0%, #98FB98 100%); padding: 1rem; border-radius: 20px; border: 3px solid #FFD700; min-width: 150px;">
+                    <h3 style="color: #2E4057; margin: 0; font-family: 'Fredoka', cursive;">🎮 Fun Tests</h3>
+                </div>
+                <div style="background: linear-gradient(135deg, #FFB6C1 0%, #FFC0CB 100%); padding: 1rem; border-radius: 20px; border: 3px solid #FF6B9D; min-width: 150px;">
+                    <h3 style="color: #2E4057; margin: 0; font-family: 'Fredoka', cursive;">📊 Cool Charts</h3>
+                </div>
+                <div style="background: linear-gradient(135deg, #FFFFE0 0%, #FFFACD 100%); padding: 1rem; border-radius: 20px; border: 3px solid #F8B500; min-width: 150px;">
+                    <h3 style="color: #2E4057; margin: 0; font-family: 'Fredoka', cursive;">🏆 Achievements</h3>
+                </div>
+            </div>
         </div>
     </div>
     """, unsafe_allow_html=True)
@@ -410,48 +384,48 @@ def show_login_page():
     """, unsafe_allow_html=True)
 
 def show_register_page():
-    """Display the enhanced registration page with detailed profile information"""
+    """Display the child-friendly registration page with detailed profile information"""
     db = get_database()
     
     st.markdown("""
     <div class="login-container">
-        <h2 style="text-align: center; color: white; margin-bottom: 1rem;">Student Registration</h2>
-        <p style="text-align: center; color: #cccccc; margin-bottom: 2rem;">Create your detailed student profile</p>
+        <h2 style="text-align: center; color: #2E4057; margin-bottom: 1rem; font-family: 'Fredoka', cursive;">🌟 Join Our Learning Adventure! 🌟</h2>
+        <p style="text-align: center; color: #2E4057; margin-bottom: 2rem; font-family: 'Comic Neue', cursive; font-weight: 600;">Create your super cool student profile and start your WIDA journey! 🚀</p>
     </div>
     """, unsafe_allow_html=True)
     
     with st.form("register_form"):
-        st.markdown("### Personal Information")
+        st.markdown("### 👤 Tell Us About Yourself!")
         
         col1, col2 = st.columns(2)
         with col1:
-            first_name = st.text_input("First Name *", placeholder="Enter your first name")
+            first_name = st.text_input("🎯 First Name *", placeholder="What's your first name?")
         with col2:
-            last_name = st.text_input("Last Name *", placeholder="Enter your last name")
+            last_name = st.text_input("🎯 Last Name *", placeholder="What's your last name?")
         
-        date_of_birth = st.date_input("Date of Birth *", 
-                                     help="This helps us track your learning progress")
+        date_of_birth = st.date_input("🎂 When is your birthday? *", 
+                                     help="This helps us celebrate your special day and track your awesome progress!")
         
-        st.markdown("### Account Information")
-        unique_id = st.text_input("Choose a Unique ID *", 
-                                 placeholder="Enter your unique identifier (username)")
-        password = st.text_input("Password (Optional)", 
+        st.markdown("### 🔐 Create Your Account")
+        unique_id = st.text_input("🆔 Choose Your Cool Username *", 
+                                 placeholder="Pick a super cool username just for you!")
+        password = st.text_input("🔒 Secret Password (Optional)", 
                                 type="password", 
-                                placeholder="Leave blank for no password",
-                                help="Password is optional but recommended for security")
+                                placeholder="Create a secret password (or leave it blank)",
+                                help="A password keeps your account extra safe! But it's totally optional 😊")
         
         st.markdown("---")
         
         # Terms and conditions
-        accept_terms = st.checkbox("I agree to the terms and conditions and privacy policy")
+        accept_terms = st.checkbox("✅ I agree to play by the rules and have fun learning!")
         
-        submit = st.form_submit_button("Create Student Profile", use_container_width=True)
+        submit = st.form_submit_button("🚀 Start My Learning Adventure!", use_container_width=True)
         
         if submit:
             if not all([first_name, last_name, unique_id, date_of_birth]):
-                st.error("Please fill in all required fields marked with *")
+                st.error("🚨 Oops! Please fill in all the fields with a ⭐ - we need them to create your awesome profile!")
             elif not accept_terms:
-                st.error("Please accept the terms and conditions to continue")
+                st.error("📝 Please check the box to agree to our fun learning rules!")
             else:
                 # Convert date to string format
                 dob_str = date_of_birth.strftime('%Y-%m-%d')
@@ -460,18 +434,18 @@ def show_register_page():
                                   first_name, last_name, dob_str):
                     st.markdown("""
                     <div class="success-box">
-                        <h4 style="color: #000000; margin-bottom: 0.5rem;">🎉 Registration Successful!</h4>
-                        <p style="color: #000000; margin: 0;">Welcome to WIDA Test Preparation, {first_name}!</p>
-                        <p style="color: #000000; margin: 0.5rem 0 0 0;">Your analytics profile has been created. You can now login to start your learning journey.</p>
+                        <h4 style="color: #006400; margin-bottom: 0.5rem;">🎉 Awesome! You're Part of Our Learning Family!</h4>
+                        <p style="color: #006400; margin: 0;">Welcome aboard, {first_name}! 🌟</p>
+                        <p style="color: #006400; margin: 0.5rem 0 0 0;">Your super cool profile is ready! Let's start your amazing WIDA adventure! 🚀✨</p>
                     </div>
                     """.format(first_name=first_name), unsafe_allow_html=True)
                     
                     # Show login button
-                    if st.button("Go to Login", use_container_width=True):
+                    if st.button("🎮 Let's Start Learning!", use_container_width=True):
                         st.session_state.page = 'login'
                         st.rerun()
                 else:
-                    st.error("This Unique ID is already taken. Please choose a different one.")
+                    st.error("🚨 Oops! That username is already taken by another awesome learner. Try a different one!")
     
     # Back to login link
     st.markdown("---")
@@ -484,7 +458,7 @@ def show_student_dashboard():
     db = get_database()
     user = st.session_state.user
     
-    show_header("Dashboard", f"Welcome back, {user['unique_id']}")
+    show_header("🎮 Your Learning Dashboard", f"Hey there, {user['unique_id']}! Ready for some fun? 🌟")
     
     # Get topics and student results
     topics = db.get_topics()
@@ -495,7 +469,8 @@ def show_student_dashboard():
     with col1:
         st.markdown("""
         <div class="card">
-            <h3 style="color: white; margin-bottom: 1rem;">📚 WIDA Test Preparation Topics</h3>
+            <h3 style="color: #2E4057; margin-bottom: 1rem; font-family: 'Fredoka', cursive;">🎯 Amazing WIDA Learning Adventures!</h3>
+            <p style="color: #2E4057; font-family: 'Comic Neue', cursive;">Choose a topic and start your learning journey! Each one is super fun! 🚀</p>
         </div>
         """, unsafe_allow_html=True)
         
@@ -514,41 +489,53 @@ def show_student_dashboard():
             for i, (category, category_topics) in enumerate(categories.items()):
                 with category_tabs[i]:
                     st.markdown(f"""
-                    <div style="padding: 1rem; background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%); border-radius: 10px; margin: 1rem 0; border: 1px solid #333333;">
-                        <h4 style="color: white; margin-bottom: 1rem;">🎯 {category} Skills</h4>
+                    <div style="padding: 1.5rem; background: linear-gradient(135deg, #E8F5FF 0%, #F0FFFF 100%); border-radius: 20px; margin: 1rem 0; border: 3px solid #87CEEB;">
+                        <h4 style="color: #2E4057; margin-bottom: 1rem; font-family: 'Fredoka', cursive;">🎯 {category} Adventures!</h4>
+                        <p style="color: #2E4057; font-family: 'Comic Neue', cursive; margin: 0;">Click on any topic to start your learning adventure! 🚀</p>
                     </div>
                     """, unsafe_allow_html=True)
                     
                     for topic in category_topics:
                         difficulty_color = {
-                            'Beginner': '#4ade80',
-                            'Intermediate': '#fbbf24', 
-                            'Advanced': '#ef4444'
-                        }.get(topic.get('difficulty', 'Intermediate'), '#fbbf24')
+                            'Beginner': '#90EE90',
+                            'Intermediate': '#FFD700', 
+                            'Advanced': '#FF6B9D'
+                        }.get(topic.get('difficulty', 'Intermediate'), '#FFD700')
+                        
+                        difficulty_emoji = {
+                            'Beginner': '🌱',
+                            'Intermediate': '⭐', 
+                            'Advanced': '🏆'
+                        }.get(topic.get('difficulty', 'Intermediate'), '⭐')
                         
                         col_topic, col_difficulty = st.columns([3, 1])
                         
                         with col_topic:
-                            if st.button(f"📖 {topic['title']}", key=f"topic_{topic['id']}", use_container_width=True):
+                            if st.button(f"� {topic['title']}", key=f"topic_{topic['id']}", use_container_width=True):
                                 st.session_state.current_test_topic = topic
                                 st.session_state.page = 'test'
                                 st.rerun()
                         
                         with col_difficulty:
                             st.markdown(f"""
-                            <div style="text-align: center; padding: 0.5rem; background: {difficulty_color}; color: black; border-radius: 6px; font-size: 0.8rem; font-weight: 600;">
-                                {topic.get('difficulty', 'Intermediate')}
+                            <div style="text-align: center; padding: 0.5rem; background: {difficulty_color}; color: #2E4057; border-radius: 15px; font-size: 0.9rem; font-weight: 700; font-family: 'Fredoka', cursive; border: 2px solid #2E4057;">
+                                {difficulty_emoji} {topic.get('difficulty', 'Intermediate')}
                             </div>
                             """, unsafe_allow_html=True)
         else:
-            st.info("No syllabus topics available yet.")
+            st.markdown("""
+            <div class="card" style="text-align: center;">
+                <h3 style="color: #2E4057; margin-bottom: 1rem; font-family: 'Fredoka', cursive;">🔍 No Adventures Yet!</h3>
+                <p style="color: #2E4057; font-family: 'Comic Neue', cursive;">New learning adventures will appear here soon! Stay tuned! 🌟</p>
+            </div>
+            """, unsafe_allow_html=True)
     
     with col2:
         st.markdown(f"""
         <div class="progress-card">
             <div class="progress-number">{len(student_results)}</div>
-            <p style="color: #cccccc; margin: 0;">Tests Completed</p>
-            <p style="color: #cccccc; font-size: 0.9rem; margin: 0.5rem 0 0 0;">Keep up the great work!</p>
+            <p style="color: #2E4057; margin: 0; font-family: 'Fredoka', cursive;">🎯 Adventures Completed!</p>
+            <p style="color: #2E4057; font-size: 0.9rem; margin: 0.5rem 0 0 0; font-family: 'Comic Neue', cursive;">You're doing amazing! Keep going! 🌟</p>
         </div>
         """, unsafe_allow_html=True)
         
@@ -556,27 +543,28 @@ def show_student_dashboard():
         if student_results:
             synced_count = sum(1 for r in student_results if r.get('github_synced', False))
             st.markdown(f"""
-            <div style="text-align: center; padding: 1rem; background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%); border-radius: 10px; margin: 1rem 0; border: 1px solid #333333;">
-                <div style="color: white; font-size: 1.2rem; font-weight: 600;">{synced_count}/{len(student_results)}</div>
-                <p style="color: #cccccc; margin: 0; font-size: 0.9rem;">Results Backed Up</p>
+            <div style="text-align: center; padding: 1rem; background: linear-gradient(135deg, #E8F5FF 0%, #F0FFFF 100%); border-radius: 20px; margin: 1rem 0; border: 3px solid #87CEEB;">
+                <div style="color: #2E4057; font-size: 1.2rem; font-weight: 700; font-family: 'Fredoka', cursive;">{synced_count}/{len(student_results)}</div>
+                <p style="color: #2E4057; margin: 0; font-size: 0.9rem; font-family: 'Comic Neue', cursive;">☁️ Results Saved in the Cloud!</p>
             </div>
             """, unsafe_allow_html=True)
         
         if student_results:
             st.markdown("""
             <div class="card">
-                <h4 style="color: white; margin-bottom: 1rem;">📈 Recent Results</h4>
+                <h4 style="color: #2E4057; margin-bottom: 1rem; font-family: 'Fredoka', cursive;">🏆 Your Recent Adventures!</h4>
             </div>
             """, unsafe_allow_html=True)
             
             for result in student_results[:3]:  # Show last 3 results
-                score_color = "#ffffff" if result['score'] >= 70 else "#cccccc"
+                score_color = "#4ade80" if result['score'] >= 70 else "#fbbf24" if result['score'] >= 50 else "#ff6b9d"
+                score_emoji = "🌟" if result['score'] >= 70 else "👍" if result['score'] >= 50 else "💪"
                 sync_icon = "☁️" if result.get('github_synced', False) else "💾"
                 st.markdown(f"""
-                <div style="background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%); padding: 1rem; margin: 0.5rem 0; border-radius: 8px; border-left: 4px solid {score_color}; border: 1px solid #333333;">
-                    <strong style="color: white;">{result['topic_title']}</strong> {sync_icon}<br>
-                    <span style="color: {score_color}; font-weight: 600;">{result['score']}%</span>
-                    <span style="color: #cccccc; font-size: 0.9rem;"> • {result['submitted_at'][:10]}</span>
+                <div style="background: linear-gradient(135deg, #E8F5FF 0%, #F0FFFF 100%); padding: 1rem; margin: 0.5rem 0; border-radius: 15px; border-left: 4px solid {score_color}; border: 2px solid #87CEEB;">
+                    <strong style="color: #2E4057; font-family: 'Fredoka', cursive;">{result['topic_title']}</strong> {sync_icon}<br>
+                    <span style="color: {score_color}; font-weight: 700; font-family: 'Fredoka', cursive;">{score_emoji} {result['score']}%</span>
+                    <span style="color: #2E4057; font-size: 0.9rem; font-family: 'Comic Neue', cursive;"> • {result['submitted_at'][:10]}</span>
                 </div>
                 """, unsafe_allow_html=True)
 
